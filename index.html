@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Email Verification</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">G</span><span>Account Verification</span></div>
+    <a class="tutorial" href="#" aria-label="Tutorial">Tutorial</a>
+  </header>
+
+  <main class="page">
+    <section class="panel">
+      <h1>Email verification</h1>
+      <p class="muted">Complete the official security check to continue.</p>
+      <form id="verify-form">
+        <label for="email">Email address</label>
+        <input id="email" type="email" autocomplete="email" required placeholder="name@example.com" />
+        <button id="start-btn" type="submit">Continue</button>
+      </form>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <div class="overlay hidden" id="captcha-modal" aria-hidden="true">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-head">
+        <h2 id="modal-title">Verification Required</h2>
+        <button class="close" id="close-modal" aria-label="Close">×</button>
+      </div>
+      <div class="challenge-wrap">
+        <iframe id="challenge-frame" title="Official security verification"
+          referrerpolicy="strict-origin-when-cross-origin"
+          sandbox="allow-scripts allow-forms allow-same-origin allow-popups"></iframe>
+        <div class="challenge-placeholder" id="placeholder">
+          <div class="spinner"></div>
+          <p>Loading the official verification challenge…</p>
+        </div>
+      </div>
+      <p class="modal-note">Complete the security check in the official challenge window. This page does not collect CAPTCHA cookies.</p>
+    </section>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

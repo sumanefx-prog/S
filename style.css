@@ -1,0 +1,33 @@
+:root { color-scheme: light; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #171923; background: #f4f5f7; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; }
+.topbar { height: 76px; padding: 0 5vw; display:flex; align-items:center; justify-content:space-between; background:#fff; border-bottom:1px solid #e8e9ed; }
+.brand { display:flex; align-items:center; gap:12px; font-size:20px; font-weight:700; }
+.brand-mark { width:38px; height:38px; border-radius:12px; display:grid; place-items:center; color:#fff; background:#d51d2a; font-weight:800; }
+.tutorial { color:#fff; background:#d51d2a; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:600; }
+.page { min-height:calc(100vh - 76px); display:grid; place-items:center; padding:28px 16px; }
+.panel { width:min(100%, 460px); padding:32px; background:#fff; border:1px solid #e7e8ec; border-radius:20px; box-shadow:0 12px 40px #1720330d; }
+h1 { margin:0 0 8px; font-size:28px; }
+.muted,.modal-note { color:#697080; line-height:1.55; }
+form { margin-top:26px; display:grid; gap:10px; }
+label { font-size:14px; font-weight:650; }
+input { width:100%; border:1px solid #d8dbe2; border-radius:10px; padding:14px; font:inherit; outline:none; }
+input:focus { border-color:#d51d2a; box-shadow:0 0 0 3px #d51d2a18; }
+button { font:inherit; cursor:pointer; }
+#start-btn { margin-top:8px; border:0; border-radius:10px; padding:14px; background:#d51d2a; color:#fff; font-weight:700; }
+#start-btn:disabled { opacity:.6; cursor:wait; }
+.status { min-height:22px; margin:14px 0 0; font-size:14px; color:#51596a; }
+.overlay { position:fixed; inset:0; z-index:10; display:grid; place-items:center; padding:22px; background:#0009; }
+.hidden { display:none; }
+.modal { width:min(100%, 720px); min-height: min(680px, 88vh); display:flex; flex-direction:column; overflow:hidden; border-radius:20px; background:#fff; box-shadow:0 24px 80px #0004; }
+.modal-head { display:flex; align-items:center; justify-content:space-between; padding:22px 28px; border-bottom:1px solid #e8e8e8; }
+.modal-head h2 { margin:0; font-size:23px; font-weight:550; }
+.close { border:0; background:transparent; color:#777; font-size:32px; line-height:1; }
+.challenge-wrap { position:relative; flex:1; min-height:470px; margin:22px 16px 0; border:1px solid #e6e7eb; border-radius:14px; overflow:hidden; background:#fafafa; }
+iframe { display:block; width:100%; height:100%; min-height:470px; border:0; background:#fff; }
+.challenge-placeholder { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; background:#fff; color:#697080; text-align:center; pointer-events:none; }
+.challenge-placeholder p { padding:0 20px; }
+.spinner { width:30px; height:30px; border:3px solid #e6e7eb; border-top-color:#d51d2a; border-radius:50%; animation:spin .8s linear infinite; }
+.modal-note { padding:0 24px 18px; font-size:12px; text-align:center; }
+@keyframes spin { to { transform:rotate(360deg); } }
+@media (max-width:560px) { .topbar { height:64px; padding:0 16px; } .brand { font-size:16px; } .tutorial { padding:10px 13px; font-size:13px; } .page { min-height:calc(100vh - 64px); } .panel { padding:24px; } .modal { min-height:78vh; border-radius:16px; } .modal-head { padding:18px; } .modal-head h2 { font-size:20px; } .challenge-wrap { min-height:420px; margin:14px 10px 0; } iframe { min-height:420px; } }
